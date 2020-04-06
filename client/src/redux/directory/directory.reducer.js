@@ -1,6 +1,6 @@
 /*moving our state "will not modify" outside of our component 
 and into their own reducer makes it easier to test*/
-const INITIAL_STATE = {
+export const INITIAL_STATE = {
    sections: [
         {
             title: 'hats',
@@ -43,7 +43,7 @@ const INITIAL_STATE = {
     ]
 }
 
-const directoryReducer = (state= INITIAL_STATE,action) => {
+const directoryReducer = (state = INITIAL_STATE,action) => {
   switch(action.type){
     default:
       return state;
