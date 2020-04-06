@@ -16,6 +16,7 @@
     "react-scripts": "3.4.0",
     "react-search-box": "^2.0.2",
     "react-stripe-checkout": "^2.6.3",
+    "react-test-renderer": "16.13.1",
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
@@ -25,6 +26,9 @@
   },
   "devDependencies": {
     "react-scripts": "3.0.0"
+  },
+  "resolutions": {
+    "babel-jest": "25.2.6"
   },
   "scripts": {
     "start": "react-scripts start",
