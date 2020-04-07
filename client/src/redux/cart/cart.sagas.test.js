@@ -73,5 +73,4 @@ describe('update cart in firebase', () => {
     const selected = selectCartItems.resultFunc(mockParameters.cart);
     expect(selected).toEqual(mockCartItems);
   })
-
 });
