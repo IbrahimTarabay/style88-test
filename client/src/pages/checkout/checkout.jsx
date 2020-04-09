@@ -1,49 +1,46 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {createStructuredSelector} from 'reselect';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 
-import CheckoutItem from '../../components/checkout-item/checkout-item';
 import StripeCheckoutButton from '../../components/stripe-button/stripe-button';
+import CheckoutItem from '../../components/checkout-item/checkout-item';
 
-import {selectCartItems, selectCartTotal} from '../../redux/cart/cart.selectors';
+import {
+  selectCartItems,
+  selectCartTotal
+} from '../../redux/cart/cart.selectors';
 
-import {CheckoutPageContainer,CheckoutHeaderContainer,
-        HeaderBlockContainer,TotalContainer,WarningContainer}
-  from './checkout.styles';
+import {
+  CheckoutPageContainer,
+  CheckoutHeaderContainer,
+  HeaderBlockContainer,
+  TotalContainer,
+  WarningContainer
+} from './checkout.styles';
 
-const CheckoutPage = ({cartItems,total}) => (
+export const CheckoutPage = ({ cartItems, total }) => (
   <CheckoutPageContainer>
     <CheckoutHeaderContainer>
-
       <HeaderBlockContainer>
         <span>Product</span>
-     </HeaderBlockContainer>
-
-     <HeaderBlockContainer>
+      </HeaderBlockContainer>
+      <HeaderBlockContainer>
         <span>Description</span>
-     </HeaderBlockContainer>
-
-     <HeaderBlockContainer>
+      </HeaderBlockContainer>
+      <HeaderBlockContainer>
         <span>Quantity</span>
-     </HeaderBlockContainer>
-
-     <HeaderBlockContainer>
+      </HeaderBlockContainer>
+      <HeaderBlockContainer>
         <span>Price</span>
-     </HeaderBlockContainer>
-
-     <HeaderBlockContainer>
+      </HeaderBlockContainer>
+      <HeaderBlockContainer>
         <span>Remove</span>
-     </HeaderBlockContainer>
+      </HeaderBlockContainer>
     </CheckoutHeaderContainer>
-    {
-      cartItems.map(cartItem =>
-         <CheckoutItem key={cartItem.id} cartItem={cartItem} />
-      )
-    }{/*we pass quantity here because we want update it every time quantity change
-    so we have here in this file selectCartItems that give us the new state everytime quantity change*/}
-    <TotalContainer>
-      <span>TOTAL: ${total}</span>
-    </TotalContainer>
+    {cartItems.map(cartItem => (
+      <CheckoutItem key={cartItem.id} cartItem={cartItem} />
+    ))}
+    <TotalContainer>TOTAL: ${total}</TotalContainer>
     <WarningContainer>
       *Please use the following test credit card for payments*
       <br />
@@ -56,6 +53,6 @@ const CheckoutPage = ({cartItems,total}) => (
 const mapStateToProps = createStructuredSelector({
   cartItems: selectCartItems,
   total: selectCartTotal
-})
+});
 
 export default connect(mapStateToProps)(CheckoutPage);
