@@ -8,7 +8,7 @@ import MenuItem from '../menu-item/menu-item';
 
 import {DirectoryMenuContainer} from './directory.styles';
 
-const Directory = ({sections}) =>(
+export const Directory = ({sections}) =>(
   <DirectoryMenuContainer>
     {sections.map(({id, ...otherSectionProps}) =>(
         <MenuItem key={id} {...otherSectionProps} />
