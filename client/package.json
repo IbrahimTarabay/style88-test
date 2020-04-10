@@ -28,7 +28,7 @@
     "react-scripts": "3.0.0"
   },
   "resolutions": {
-    "babel-jest": "25.2.6"
+    "babel-jest": "24.9.0"
   },
   "scripts": {
     "start": "react-scripts start",
