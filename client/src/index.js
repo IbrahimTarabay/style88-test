@@ -12,6 +12,7 @@ import {Provider} from 'react-redux';/*to use redux*/
 import {store,persistor} from './redux/store';
 /*Provider gives us ability to use store and reducers*/
 /*provider is component which is parent of everything in our app*/
+/*we don't pass store={store} into <App /> because we don't want to pass all store to all components*/
 
 ReactDOM.render(
    <Provider store={store}>
